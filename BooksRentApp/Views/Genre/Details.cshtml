@@ -10,20 +10,21 @@
 
     <h3>Genre Details</h3>
     <hr />
+    <div class="form-border-border">
+        <fieldset disabled>
+            <div class="row" style="padding-bottom:5px; padding-top:5px;">
 
-    <fieldset disabled>
-        <div class="row" style="padding-bottom:5px; padding-top:5px;">
+                <div class="col-md-2">
+                    @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "control-label" })
+                </div>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                </div>
 
-            <div class="col-md-2">
-                @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "control-label" })
             </div>
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-            </div>
 
-        </div>
-
-    </fieldset>
+        </fieldset>
+    </div>
 </div>
     <br />
     <p>
