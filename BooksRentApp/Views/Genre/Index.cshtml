@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<BooksRentApp.Models.Genre>
+@using BooksRentApp.Models
+
 @{
     ViewBag.Title = "Index";
 }
@@ -17,6 +19,7 @@
             @Html.DisplayNameFor(m => m.Name)
         </th>
         <th></th>
+        <th></th>
 
     </tr>
 
@@ -28,7 +31,7 @@
 
             </td>
             <td>
-                EDIT | DETAILS | DELETE
+              @Html.Partial("_TableButtonPartial",new IndividualButtonPartial { GenreId= item.Id})
 
             </td>
 
