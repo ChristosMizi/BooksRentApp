@@ -26,7 +26,8 @@
     </fieldset>
 </div>
     <br />
-<p>
-    @Html.Partial("_BackToListButtonPartial")
-</p>
+    <p>
+        @Html.Partial("_BackToListButtonPartial")
+        @Html.Partial("_EditButtonPartial",Model.Id)
+    </p>
 
