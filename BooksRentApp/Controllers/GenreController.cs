@@ -97,6 +97,38 @@ namespace BooksRentApp.Controllers
             return View();
         }
 
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Genre genre = db.Genres.Find(id);
+            if (genre == null)
+            {
+                return HttpNotFound();
+            }
+            return View(genre);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            if (ModelState.IsValid)
+            {
+
+                Genre genre = db.Genres.Find(id);
+                db.Genres.Remove(genre);
+                db.SaveChanges();
+               
+                
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
